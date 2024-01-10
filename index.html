@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediaquerries.css">
+</head>
+<body>
+    <nav id="desktop-nav">
+        <div class="logo"><img src="assets/jiheoney.gif" alt="Jiheoney"></div>
+        <div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Project</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <nav id="hamburger-nav">
+        <div class="logo"><img src="assets/jiheoney.gif" alt="Jiheoney"></div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+            </div>
+            <div class="menu-links">
+                <li><a href="#about" onclick="toggleMenu()">About</a></li>
+                <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+                <li><a href="#projects" onclick="toggleMenu()">Project</a></li>
+                <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+            </div>
+        </div>
+    </nav>
+    <section id="profile">
+        
+        <div class="section__pic-container-1">
+            <img src="assets/profile.png" alt="John Santos">
+        </div>
+        <div class="section__text">
+            <p class="section__text__p1">Hello I'm</p>
+            <h1 class="title">John Santos</h1>
+            <p class="section__text__p2">Amateur Programmer</p>
+            <div class="btn_container">
+                <button class="btn btn-color-2" onclick="window.open('')">Resume</button>
+                <button class="btn btn-color-1" onclick="location.href='./#contact'">Contact Info</button>
+            </div>
+            <div id="socials-container">
+                <img src="assets/github.png" alt="My Github Page!" class="icon" onclick="location.href='https://github.com/JannersLSR'">
+                <img src="assets/twitter.png" alt="My Twitter Page!" class="icon" onclick="location.href='https://twitter.com/jawnersaints'">
+            </div>
+        </div>
+    </section>
+    <section id="about">
+        <h1 class="title">About me</h1>
+        <div class="section-container">
+            <div class="section__pic-container-2">
+                <img src="assets/aboutme.jpg" alt="John Santos" class="about-pic">
+            </div>
+            <div class="about-details-container">
+                <div class="about-containers">
+                    <div class="details-container">
+                        <img src="assets/experience.png" alt="Experience icon" class="icon">
+                        <h3>Experience</h3>
+                        <p>Amateur Programming Experience <br>Amateur Game/Mod Developer<br>Amateur Content Creator</p>
+                    </div>
+                    <div class="details-container">
+                        <img src="assets/education.png" alt="Education icon" class="icon">
+                        <h3>Education</h3>
+                        <p>Highschool Graduate</p>
+                    </div>
+                </div>
+                <div class="text-container">
+                    <p> Hello, I am John Robert Santos! My nicknames are: Jahn, Janners, Jawn. <br><br> I am an Amateur Programmer based in the Philippines. I am currently taking a Bachelors of Science in Information Technology Degree in Malayan Colleges Laguna. I am interested in all kinds of fields and topics. Including but not limited to: K-pop / Korean Culture, Video Games, Content Creation, etc. <br><br> I'd love to dicuss and hear about other peoples interests and hobbies!</p>
+                </div>
+            </div>
+        </div>
+        <img src="assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='/#experience'">
+    </section>
+    <section id="experience">
+        <p class="section__text-p1"></p>
+        <h1>Experience</h1>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
