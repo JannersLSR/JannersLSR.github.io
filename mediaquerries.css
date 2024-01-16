@@ -6,3 +6,13 @@
         display: flex;
     }
 }
+
+
+@keyframes titleBreathe {
+    0% {
+        color: darkviolet;
+    }
+    50% {
+        color: violet;
+    }
+}
