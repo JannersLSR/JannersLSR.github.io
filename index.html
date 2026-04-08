@@ -21,6 +21,7 @@
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#experience">Experience</a></li>
+                <li><a href="#certifications">Certifications</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#groups">Groups</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -38,6 +39,7 @@
             <ul class="menu-links">
                 <li><a href="#about" onclick="toggleMenu()">About</a></li>
                 <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+                <li><a href="#certifications" onclick="toggleMenu()">Certifications</a></li>
                 <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
                 <li><a href="#groups" onclick="toggleMenu()">Groups</a></li>
                 <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
@@ -56,15 +58,16 @@
             <div class="section__text">
                 <p class="section__text__p1">Hello I'm</p>
                 <h1 class="title">John Santos</h1>
-                <p class="section__text__p2">Amateur Programmer</p>
+                <p class="section__text__p2">Aspiring Software Developer &<br>Network Administrator</p>
                 <div class="btn_container">
-                    <button class="btn btn-color-2" onclick="window.open('')">Resume</button>
+                    <button class="btn btn-color-2"
+                        onclick="window.open('assets/Santos_JohnRobertC.-Resume.pdf', '_blank')">Resume</button>
                 </div>
                 <div id="socials-container">
                     <a href="https://github.com/JannersLSR" target="_blank" aria-label="GitHub">
                         <i class="fa-brands fa-github"></i>
                     </a>
-                    <a href="https://twitter.com/jawnersaints" target="_blank" aria-label="Twitter">
+                    <a href="https://twitter.com/jawnerS_" target="_blank" aria-label="Twitter">
                         <i class="fa-brands fa-x-twitter"></i>
                     </a>
                     <a href="https://www.linkedin.com/in/jannerslsr/" target="_blank" aria-label="LinkedIn">
@@ -101,8 +104,8 @@
                         I am currently taking Bachelors of Science in Information Technology Degree in Malayan Colleges
                         Laguna.
                         I am interested in all kinds of fields and topics.
-                        Including but not limited to: K-Pop / Korean Culture, Video Games, Media,
-                        etc. <br><br> Feel free to drop me a message if you'd like to chat!</p>
+                        Including but not limited to: K-Pop / Korean Culture, Video Games, Tech,
+                        etc. <br><br> Feel free to drop me a message in my socials if you'd like to chat!</p>
                 </div>
             </div>
         </div>
@@ -219,123 +222,178 @@
                 </div>
             </div>
         </div>
+        <a href="#certifications" class="arrow-link"><i class="fa-solid fa-chevrons-down arrow-icon"></i></a>
+    </section>
+
+    <section id="certifications">
+        <h1 class="title fade-in">Certifications</h1>
+        <div class="projects-grid fade-in">
+            <div class="project-card">
+                <div class="project-card-icon">
+                    <i class="fa-solid fa-certificate"></i>
+                </div>
+                <h2 class="project-card-title">LinkedIn Certification #1</h2>
+                <p class="project-card-role">Issuing Organization</p>
+                <p class="project-card-tech">Date Issued - Date Valid</p>
+                <p class="project-card-desc">Provide your certification details from LinkedIn here.</p>
+                <button class="btn btn-color-1 project-btn" onclick="window.open('https://linkedin.com', '_blank')">
+                    Verify Credential
+                </button>
+            </div>
+            <div class="project-card">
+                <div class="project-card-icon">
+                    <i class="fa-solid fa-certificate"></i>
+                </div>
+                <h2 class="project-card-title">LinkedIn Certification #2</h2>
+                <p class="project-card-role">Issuing Organization</p>
+                <p class="project-card-tech">Date Issued - Date Valid</p>
+                <p class="project-card-desc">Provide your certification details from LinkedIn here.</p>
+                <button class="btn btn-color-1 project-btn" onclick="window.open('https://linkedin.com', '_blank')">
+                    Verify Credential
+                </button>
+            </div>
+            <div class="project-card">
+                <div class="project-card-icon">
+                    <i class="fa-solid fa-certificate"></i>
+                </div>
+                <h2 class="project-card-title">LinkedIn Certification #3</h2>
+                <p class="project-card-role">Issuing Organization</p>
+                <p class="project-card-tech">Date Issued - Date Valid</p>
+                <p class="project-card-desc">Provide your certification details from LinkedIn here.</p>
+                <button class="btn btn-color-1 project-btn" onclick="window.open('https://linkedin.com', '_blank')">
+                    Verify Credential
+                </button>
+            </div>
+        </div>
         <a href="#projects" class="arrow-link"><i class="fa-solid fa-chevrons-down arrow-icon"></i></a>
     </section>
 
     <section id="projects">
         <h1 class="title fade-in">Projects</h1>
-        <div class="projects-grid fade-in">
-            <div class="project-card">
-                <div class="project-card-icon">
-                    <i class="fa-solid fa-clock"></i>
+        <div class="projects-carousel-wrapper fade-in">
+            <button class="carousel-btn carousel-btn-left" onclick="scrollProjects(-1)" aria-label="Previous">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-card-icon">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <h2 class="project-card-title">Clock-In</h2>
+                    <p class="project-card-role">Project Manager & Lead Mobile Dev</p>
+                    <p class="project-card-tech">Kotlin & Supabase</p>
+                    <p class="project-card-desc">Multi-factor auth system using BLE Beacons, QR Codes, and WiFi for
+                        secure
+                        employee tracking.</p>
+                    <button class="btn btn-color-1 project-btn"
+                        onclick="location.href='https://github.com/SuperficialFlow/ClockIn-Application-Demo'">
+                        Github Link
+                    </button>
                 </div>
-                <h2 class="project-card-title">Clock-In</h2>
-                <p class="project-card-role">Project Manager & Lead Mobile Dev</p>
-                <p class="project-card-tech">Kotlin & Supabase</p>
-                <p class="project-card-desc">Multi-factor auth system using BLE Beacons, QR Codes, and WiFi for secure
-                    employee tracking.</p>
-                <button class="btn btn-color-1 project-btn"
-                    onclick="location.href='https://github.com/SuperficialFlow/ClockIn-Application-Demo'">
-                    Github Link
-                </button>
-            </div>
-            <div class="project-card">
-                <div class="project-card-icon">
-                    <i class="fa-solid fa-cube"></i>
+                <div class="project-card">
+                    <div class="project-card-icon">
+                        <i class="fa-solid fa-cube"></i>
+                    </div>
+                    <h2 class="project-card-title">Rubik's Cube Cipher</h2>
+                    <p class="project-card-role">Security Researcher & Lead Dev</p>
+                    <p class="project-card-tech">Python</p>
+                    <p class="project-card-desc">Custom cryptographic algorithm simulating bit-level Rubik's Cube
+                        rotations
+                        for data obfuscation.</p>
+                    <button class="btn btn-color-1 project-btn"
+                        onclick="location.href='https://github.com/JannersLSR/Rubik-s-Cube-Cipher'">
+                        Github Link
+                    </button>
                 </div>
-                <h2 class="project-card-title">Rubik's Cube Cipher</h2>
-                <p class="project-card-role">Security Researcher & Lead Dev</p>
-                <p class="project-card-tech">Python</p>
-                <p class="project-card-desc">Custom cryptographic algorithm simulating bit-level Rubik's Cube rotations
-                    for data obfuscation.</p>
-                <button class="btn btn-color-1 project-btn"
-                    onclick="location.href='https://github.com/JannersLSR/Rubik-s-Cube-Cipher'">
-                    Github Link
-                </button>
-            </div>
-            <div class="project-card">
-                <div class="project-card-icon">
-                    <i class="fa-solid fa-lock"></i>
+                <div class="project-card">
+                    <div class="project-card-icon">
+                        <i class="fa-solid fa-lock"></i>
+                    </div>
+                    <h2 class="project-card-title">Cryptool</h2>
+                    <p class="project-card-role">Backend Developer</p>
+                    <p class="project-card-tech">ASP.NET, SQL, & C#</p>
+                    <p class="project-card-desc">Modular codebase for efficient processing of encryption and decryption
+                        tasks.</p>
+                    <button class="btn btn-color-1 project-btn"
+                        onclick="location.href='https://github.com/jp-gerona/cryptool'">
+                        Github Link
+                    </button>
                 </div>
-                <h2 class="project-card-title">Cryptool</h2>
-                <p class="project-card-role">Backend Developer</p>
-                <p class="project-card-tech">ASP.NET, SQL, & C#</p>
-                <p class="project-card-desc">Modular codebase for efficient processing of encryption and decryption
-                    tasks.</p>
-                <button class="btn btn-color-1 project-btn"
-                    onclick="location.href='https://github.com/jp-gerona/cryptool'">
-                    Github Link
-                </button>
-            </div>
-            <div class="project-card">
-                <div class="project-card-icon">
-                    <i class="fa-solid fa-microchip"></i>
+                <div class="project-card">
+                    <div class="project-card-icon">
+                        <i class="fa-solid fa-microchip"></i>
+                    </div>
+                    <h2 class="project-card-title">Tic-Tac-Toe in Assembly</h2>
+                    <p class="project-card-role">Lead Developer</p>
+                    <p class="project-card-tech">x86 Assembly</p>
+                    <p class="project-card-desc">Fully functional Tic-Tac-Toe with direct hardware interactions and
+                        memory
+                        addressing.</p>
+                    <button class="btn btn-color-1 project-btn"
+                        onclick="location.href='https://github.com/JannersLSR/Tic-Tac-Toe-in-Assembly'">
+                        Github Link
+                    </button>
                 </div>
-                <h2 class="project-card-title">Tic-Tac-Toe in Assembly</h2>
-                <p class="project-card-role">Lead Developer</p>
-                <p class="project-card-tech">x86 Assembly</p>
-                <p class="project-card-desc">Fully functional Tic-Tac-Toe with direct hardware interactions and memory
-                    addressing.</p>
-                <button class="btn btn-color-1 project-btn"
-                    onclick="location.href='https://github.com/JannersLSR/Tic-Tac-Toe-in-Assembly'">
-                    Github Link
-                </button>
-            </div>
-            <div class="project-card">
-                <div class="project-card-icon">
-                    <i class="fa-solid fa-chart-line"></i>
+                <div class="project-card">
+                    <div class="project-card-icon">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <h2 class="project-card-title">CCIS Week Dashboard</h2>
+                    <p class="project-card-role">Full Stack Developer</p>
+                    <p class="project-card-tech">JavaScript, HTML, & CSS</p>
+                    <p class="project-card-desc">Centralized event management dashboard with Oracle DB and Node.js for
+                        real-time tracking.</p>
+                    <button class="btn btn-color-1 project-btn"
+                        onclick="location.href='https://github.com/JannersLSR/CCIS_Week_Dashboard'">
+                        Github Link
+                    </button>
                 </div>
-                <h2 class="project-card-title">CCIS Week Dashboard</h2>
-                <p class="project-card-role">Full Stack Developer</p>
-                <p class="project-card-tech">JavaScript, HTML, & CSS</p>
-                <p class="project-card-desc">Centralized event management dashboard with Oracle DB and Node.js for
-                    real-time tracking.</p>
-                <button class="btn btn-color-1 project-btn"
-                    onclick="location.href='https://github.com/JannersLSR/CCIS_Week_Dashboard'">
-                    Github Link
-                </button>
-            </div>
-            <div class="project-card">
-                <div class="project-card-icon">
-                    <i class="fa-solid fa-dragon"></i>
+                <div class="project-card">
+                    <div class="project-card-icon">
+                        <i class="fa-solid fa-dragon"></i>
+                    </div>
+                    <h2 class="project-card-title">PokedexCards</h2>
+                    <p class="project-card-role">Full Stack Developer</p>
+                    <p class="project-card-tech">C# & PHP</p>
+                    <p class="project-card-desc">Database of Pokémon cards for streamlined tracking of information.</p>
+                    <button class="btn btn-color-1 project-btn"
+                        onclick="location.href='https://github.com/BirdBrain34/PokedexCards'">
+                        Github Link
+                    </button>
                 </div>
-                <h2 class="project-card-title">PokedexCards</h2>
-                <p class="project-card-role">Full Stack Developer</p>
-                <p class="project-card-tech">C# & PHP</p>
-                <p class="project-card-desc">Database of Pokémon cards for streamlined tracking of information.</p>
-                <button class="btn btn-color-1 project-btn"
-                    onclick="location.href='https://github.com/BirdBrain34/PokedexCards'">
-                    Github Link
-                </button>
-            </div>
-            <div class="project-card">
-                <div class="project-card-icon">
-                    <i class="fa-solid fa-record-vinyl"></i>
+                <div class="project-card">
+                    <div class="project-card-icon">
+                        <i class="fa-solid fa-record-vinyl"></i>
+                    </div>
+                    <h2 class="project-card-title">Jukeboxd</h2>
+                    <p class="project-card-role">Full-Stack Developer</p>
+                    <p class="project-card-tech">ASP.NET, SQL, & C#</p>
+                    <p class="project-card-desc">E-commerce platform for vinyl collectors with dual-interface and
+                        relational
+                        database management.</p>
+                    <button class="btn btn-color-1 project-btn"
+                        onclick="location.href='https://github.com/jp-gerona/Jukeboxd'">
+                        Github Link
+                    </button>
                 </div>
-                <h2 class="project-card-title">Jukeboxd</h2>
-                <p class="project-card-role">Full-Stack Developer</p>
-                <p class="project-card-tech">ASP.NET, SQL, & C#</p>
-                <p class="project-card-desc">E-commerce platform for vinyl collectors with dual-interface and relational
-                    database management.</p>
-                <button class="btn btn-color-1 project-btn"
-                    onclick="location.href='https://github.com/jp-gerona/Jukeboxd'">
-                    Github Link
-                </button>
-            </div>
-            <div class="project-card">
-                <div class="project-card-icon">
-                    <i class="fa-solid fa-satellite-dish"></i>
+                <div class="project-card">
+                    <div class="project-card-icon">
+                        <i class="fa-solid fa-satellite-dish"></i>
+                    </div>
+                    <h2 class="project-card-title">Orbit</h2>
+                    <p class="project-card-role">Backend Developer</p>
+                    <p class="project-card-tech">JavaScript, HTML, & CSS</p>
+                    <p class="project-card-desc">Scalable micro-blogging platform with real-time feeds and user
+                        authentication.</p>
+                    <button class="btn btn-color-1 project-btn"
+                        onclick="location.href='https://github.com/jp-gerona/Orbit'">
+                        Github Link
+                    </button>
                 </div>
-                <h2 class="project-card-title">Orbit</h2>
-                <p class="project-card-role">Backend Developer</p>
-                <p class="project-card-tech">JavaScript, HTML, & CSS</p>
-                <p class="project-card-desc">Scalable micro-blogging platform with real-time feeds and user
-                    authentication.</p>
-                <button class="btn btn-color-1 project-btn"
-                    onclick="location.href='https://github.com/jp-gerona/Orbit'">
-                    Github Link
-                </button>
             </div>
+            <button class="carousel-btn carousel-btn-right" onclick="scrollProjects(1)" aria-label="Next">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
         </div>
         <a href="#groups" class="arrow-link"><i class="fa-solid fa-chevrons-down arrow-icon"></i></a>
     </section>
@@ -373,7 +431,7 @@
                 </div>
                 <div class="carousel-slide">
                     <img src="assets/groups/ifeye.jpg" alt="IF EYE">
-                    <p class="carousel-label">IF EYE</p>
+                    <p class="carousel-label">ifeye</p>
                 </div>
             </div>
             <button class="carousel-btn carousel-btn-right" onclick="changeSlide(1)" aria-label="Next">
