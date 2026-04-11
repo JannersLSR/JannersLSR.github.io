@@ -428,8 +428,6 @@ article h3 {
     width: 100%;
     max-width: 1200px;
     margin-top: 2rem;
-    display: flex;
-    align-items: center;
 }
 
 .projects-grid {

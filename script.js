@@ -125,8 +125,10 @@ function resetAutoSlide() {
 }
 
 // Manual scroll function for horizontal snapping Projects Grid
-function scrollProjects(direction) {
-    const grid = document.querySelector('.projects-grid');
+function scrollProjects(direction, btn) {
+    const wrapper = btn.closest('.projects-carousel-wrapper');
+    if (!wrapper) return;
+    const grid = wrapper.querySelector('.projects-grid');
     if (!grid) return;
     
     // Calculates the exact width of one visible card + gap (or dynamically get clientWidth for a chunk)
