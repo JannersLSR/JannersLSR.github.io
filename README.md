@@ -1,21 +1,58 @@
 # JannersLSR.github.io
 
-### How you accomplished each item in the criteria except for README file discussion:
+An interactive **CRT terminal portfolio** — an Arch Linux-style command line in a
+full-viewport retro CRT, with a recruiter-friendly plain view one command away.
 
-Sadly by the looks of it I did not, even though I was really guided throughout the process. In the future, I vow to polish out my skills in website programming.
+Built with **Vite + React 19**. No backend; static site for GitHub Pages.
 
-### Insights that you have gathered while accomplishing LT0, LT1, and M1M2 (Guided Exercise 1):
+## Develop
 
-It has made me refresh my memory on the basic fundamentals of programming, while adding a bit of spice with the introduction HTML, CSS, and Javascript languages. It has also introduced me to Git and Github, which for me looked so intimidating from a beginning programmers standpoint, but after grasping the gist of it, it's not as bad (yet).
+```bash
+npm install
+npm run dev      # local dev server
+npm run build    # production build -> dist/
+npm run preview  # serve the built dist/
+```
 
-### Struggles that you have encountered while accomplishing LT0, LT1, and M1M2 (Guided Exercise 1):
+## How it works
 
-The biggest struggle I still deal with is, the design and placement for elements in CSS programming. 
+- Type commands, tap the **command pills**, or use arrow-key history + Tab completion.
+- After boot it auto-runs `neofetch` and `ls projects/` so content shows immediately.
+- `help` lists everything. Highlights: `neofetch`, `ls projects/`, `cat about.md`,
+  `pacman -Qi <project>`, `sudo hire-me`. Easter eggs: `matrix`, `btw`, `play <group>`,
+  `rm -rf /`, `sudo pacman -Syu`.
+- `gui` (or `exit`) drops to a plain, scrollable view of the same content. Sound is
+  muted by default — toggle top-right.
 
-### How you could improve your website in the future:
+### Source layout
 
-At first the expectations that I had when making this was just going to be a one and done thing, that's why it focuses on my interest, but after spending time on my website, I gradually came to the conclusion that I do want to make it more professional in the next coming years. 
+```
+src/
+  App.jsx                 boot → terminal → gui orchestration
+  components/             CRTOverlay, Terminal, BootScreen, CommandInput,
+                          OutputLine, CommandPills, SoundToggle, MatrixRain, GuiView
+  hooks/                  useTerminal, useCommandHistory, useTabComplete, useSound
+  lib/                    filesystem.js (all content), commands.js, bootSequence.js
+public/assets/            images, resume PDF, group photos
+```
 
-### Other thoughts that might be noteworthy:
+All portfolio content lives in `src/lib/filesystem.js` — edit there to update
+projects, certs, skills, or contact info.
 
-I am terrible at palettes and trying to make other devices compatible with my website.
+## Deploy (GitHub Pages)
+
+`.github/workflows/deploy.yml` builds and deploys on every push to `main`.
+**One-time setup:** in the repo, go to *Settings → Pages → Build and deployment*
+and set **Source = GitHub Actions**.
+
+---
+
+## Original project notes (LT0 / LT1 / M1M2 reflection)
+
+> Kept from the first version of this portfolio.
+
+It refreshed my memory on the fundamentals of programming while introducing HTML,
+CSS, and JavaScript — plus Git and GitHub, which looked intimidating at first but
+became manageable once the gist clicked. The hardest part was CSS layout and making
+the site responsive across devices. What began as a one-and-done interest page I now
+intend to keep making more professional over the coming years.
