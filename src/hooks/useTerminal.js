@@ -7,7 +7,6 @@ const nextId = () => ++_id;
 
 const withId = (line) => ({ id: nextId(), ...line });
 
-// Core terminal state machine: output blocks + cwd + execute().
 export function useTerminal({ getCols, getHistory }) {
   const [lines, setLines] = useState([]);
   const cwdRef = useRef(HOME_PATH);
@@ -27,9 +26,6 @@ export function useTerminal({ getCols, getHistory }) {
     setLines([]);
   }, []);
 
-  // Execute a raw command line.
-  // opts.echo (default true) shows the prompt + input first.
-  // Returns { effect } so the caller can drive matrix/gui/rmrf overlays.
   const execute = useCallback(
     (raw, opts = {}) => {
       const echo = opts.echo !== false;

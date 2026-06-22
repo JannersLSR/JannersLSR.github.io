@@ -1,7 +1,5 @@
 import { PROJECTS } from '../lib/filesystem.js';
 
-// Always-visible (desktop + mobile) tappable command bar.
-// Turns the terminal from a guessing game into a navigable site.
 export default function CommandPills({ cwd, onRun }) {
   let pills;
   if (cwd.endsWith('/projects')) {

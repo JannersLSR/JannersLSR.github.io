@@ -1,12 +1,4 @@
-// Virtual filesystem + all portfolio content.
-// A "line" is { type, text, href? } where type styles the output:
-//   normal | header | success | error | system | dim | ascii | link
-// A file node: { type:'file', size, content:[lines], pkg?:{...} }
-// A dir node:  { type:'dir', children:{ name: node } }
 
-// ---------------------------------------------------------------------------
-// Source data (single source of truth)
-// ---------------------------------------------------------------------------
 
 export const PROFILE = {
   name: 'John Robert Santos',
@@ -255,10 +247,6 @@ export const SKILLS = [
   { cat: 'Desktop & Media', items: ['Tkinter', 'FFmpeg', 'Pillow', 'tkinterdnd2'] },
 ];
 
-// ---------------------------------------------------------------------------
-// Line helpers
-// ---------------------------------------------------------------------------
-
 export const L = {
   n: (text) => ({ type: 'normal', text }),
   h: (text) => ({ type: 'header', text }),
@@ -270,10 +258,6 @@ export const L = {
   link: (text, href) => ({ type: 'link', text, href }),
   blank: () => ({ type: 'normal', text: '' }),
 };
-
-// ---------------------------------------------------------------------------
-// File content builders
-// ---------------------------------------------------------------------------
 
 function aboutContent() {
   return [
@@ -412,10 +396,6 @@ function resumeFile() {
   };
 }
 
-// ---------------------------------------------------------------------------
-// Build the tree
-// ---------------------------------------------------------------------------
-
 function buildDir(builder, list) {
   const children = {};
   for (const item of list) children[`${item.id}.md`] = builder(item);
@@ -445,18 +425,12 @@ export const FS = {
 
 export const HOME_PATH = '/home/guest';
 
-// ---------------------------------------------------------------------------
-// Path helpers
-// ---------------------------------------------------------------------------
-
-// Display form: /home/guest -> ~ ; /home/guest/projects -> ~/projects
 export function toDisplayPath(absPath) {
   if (absPath === HOME_PATH) return '~';
   if (absPath.startsWith(HOME_PATH + '/')) return '~' + absPath.slice(HOME_PATH.length);
   return absPath;
 }
 
-// Resolve a user-supplied path (relative to cwd) into an absolute path string.
 export function resolvePath(cwd, input) {
   if (!input || input === '') return cwd;
   let base;
@@ -477,7 +451,6 @@ export function resolvePath(cwd, input) {
   return '/' + stack.join('/');
 }
 
-// Get a node by absolute path. Returns node or null.
 export function getNode(absPath) {
   if (absPath === '/' || absPath === '') return FS;
   const parts = absPath.split('/').filter(Boolean);
@@ -489,7 +462,6 @@ export function getNode(absPath) {
   return node;
 }
 
-// List child names of a directory node, dirs first then files.
 export function listDir(node) {
   if (!node || node.type !== 'dir') return [];
   const names = Object.keys(node.children);

@@ -55,7 +55,6 @@ export default function Terminal({ active, onRequestGui, onKeyFeedback }) {
     [onRequestGui, runRmrf]
   );
 
-  // run a command as if typed
   const runInput = useCallback(
     (raw, opts = {}) => {
       if (opts.pushHistory !== false) history.push(raw);
@@ -66,17 +65,14 @@ export default function Terminal({ active, onRequestGui, onKeyFeedback }) {
     [history, term, handleEffect, refocus]
   );
 
-  // auto-run after boot so content is visible without typing
   useEffect(() => {
     if (!active || autoRan.current) return;
     autoRan.current = true;
     term.execute('neofetch');
     const t = setTimeout(() => term.execute('ls projects/'), 450);
     return () => clearTimeout(t);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [active]);
 
-  // auto-scroll to bottom on new output
   useEffect(() => {
     const el = scrollRef.current;
     if (el) el.scrollTop = el.scrollHeight;

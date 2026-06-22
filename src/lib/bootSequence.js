@@ -1,5 +1,3 @@
-// Boot animation lines. Each entry: { text, delay, type? }
-// delay = ms to wait BEFORE showing this line. type styles it (see OutputLine).
 
 export const BANNER = [
   '     ██╗ ██████╗ ██╗  ██╗███╗   ██╗    ███████╗',

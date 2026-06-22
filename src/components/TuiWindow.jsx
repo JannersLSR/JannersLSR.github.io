@@ -3,10 +3,7 @@ import { PROFILE, PROJECTS, CERTS, GROUPS, SKILLS } from '../lib/filesystem.js';
 
 const TABS = ['About', 'Skills', 'Projects', 'Certs', 'Groups', 'Contact'];
 
-// DOS text-mode / Turbo Vision-style window. Draggable + resizable.
-// Sits under the CRT overlay so scanlines + glow wash over it too.
 export default function TuiWindow({ onClose }) {
-  // fit the viewport so it never spawns off-screen on phones
   const vw = window.innerWidth;
   const vh = window.innerHeight;
   const initW = Math.min(760, vw - 16);

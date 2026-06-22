@@ -2,8 +2,6 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 
 const STORAGE_KEY = 'crt-sound-enabled';
 
-// Web Audio API sound engine. Zero audio files — all synthesized.
-// Muted by default (browsers block autoplay; surprise sound is jarring).
 export function useSound() {
   const [enabled, setEnabled] = useState(false);
   const ctxRef = useRef(null);
@@ -13,7 +11,7 @@ export function useSound() {
     try {
       setEnabled(localStorage.getItem(STORAGE_KEY) === 'true');
     } catch {
-      /* ignore */
+      
     }
   }, []);
 
@@ -74,7 +72,7 @@ export function useSound() {
       try {
         humRef.current.osc.stop();
       } catch {
-        /* ignore */
+        
       }
       humRef.current = null;
     }
@@ -86,14 +84,13 @@ export function useSound() {
       try {
         localStorage.setItem(STORAGE_KEY, String(next));
       } catch {
-        /* ignore */
+        
       }
       if (!next) stopHum();
       return next;
     });
   }, [stopHum]);
 
-  // start/stop hum following enabled state
   useEffect(() => {
     if (enabled) startHum();
     else stopHum();

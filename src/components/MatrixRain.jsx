@@ -1,6 +1,5 @@
 import { useEffect, useRef } from 'react';
 
-// Canvas Matrix rain. Runs ~5s then calls onDone.
 export default function MatrixRain({ onDone }) {
   const canvasRef = useRef(null);
 

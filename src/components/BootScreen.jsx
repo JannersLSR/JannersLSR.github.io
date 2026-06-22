@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { BOOT_SEQUENCE } from '../lib/bootSequence.js';
 
-// Animated BIOS/POST boot sequence. Any key or tap skips to the end.
 export default function BootScreen({ onComplete, onBootSound }) {
   const [shown, setShown] = useState([]);
   const doneRef = useRef(false);
@@ -18,7 +17,6 @@ export default function BootScreen({ onComplete, onBootSound }) {
     if (doneRef.current) return;
     timers.current.forEach(clearTimeout);
     setShown(BOOT_SEQUENCE);
-    // brief beat so the full banner is visible before the prompt
     const t = setTimeout(finish, 350);
     timers.current.push(t);
   };
@@ -44,7 +42,6 @@ export default function BootScreen({ onComplete, onBootSound }) {
       window.removeEventListener('keydown', onKey);
       timers.current.forEach(clearTimeout);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

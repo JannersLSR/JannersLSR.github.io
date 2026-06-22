@@ -1,6 +1,5 @@
 import { memo } from 'react';
 
-// Renders a single terminal output block based on its type.
 function OutputLine({ line }) {
   switch (line.type) {
     case 'prompt':
@@ -55,7 +54,6 @@ function OutputLine({ line }) {
   }
 }
 
-// The Arch-style colored prompt: [guest@johnsantos ~]$
 export function Prompt({ cwd }) {
   const display = cwd === '/home/guest'
     ? '~'

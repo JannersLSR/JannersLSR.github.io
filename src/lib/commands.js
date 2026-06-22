@@ -1,14 +1,8 @@
-// Arch Linux-style command registry.
-// runCommand(raw, ctx) -> { lines, cwd?, effect?, payload? }
-//   ctx = { cwd, cols, history }
-//   effect: 'clear' | 'matrix' | 'rmrf' | 'gui' | 'cli'
 
 import {
   PROFILE, PROJECTS, CERTS, GROUPS, L,
   resolvePath, getNode, listDir,
 } from './filesystem.js';
-
-// ---- helpers ---------------------------------------------------------------
 
 function uptime() {
   const start = new Date(PROFILE.birthdate + 'T00:00:00');
@@ -97,8 +91,6 @@ function fileOpenTarget(node) {
   return link ? link.href : null;
 }
 
-// ---- command handlers ------------------------------------------------------
-
 const COMMANDS = {
   help: {
     desc: 'List all available commands',
@@ -115,7 +107,7 @@ const COMMANDS = {
         ['history', 'show command history'],
         ['echo <text>', 'print text'],
         ['clear', 'clear the screen'],
-        ['gui', 'switch to a plain, scrollable view'],
+        ['gui', 'open / close the GUI window'],
         ['sudo hire-me', 'contact info + resume'],
       ];
       const out = [L.h('Available commands'), L.blank()];
@@ -304,7 +296,7 @@ const COMMANDS = {
   },
 
   gui: {
-    desc: 'Switch to plain view',
+    desc: 'Open / close the GUI window',
     run: () => ({ lines: [], effect: 'gui' }),
   },
 
@@ -339,7 +331,6 @@ const COMMANDS = {
       }
       if (sub === 'rm') return COMMANDS.rm.run(args.slice(1), ctx);
       if (!sub) return [L.err('usage: sudo <command>')];
-      // generic sudo
       return [
         L.dim(`[sudo] password for guest:`),
         L.n('guest is not in the sudoers file. This incident will be reported.'),
@@ -349,12 +340,9 @@ const COMMANDS = {
   },
 };
 
-// arrow used in help table
 const L_arrow = '— ';
 
-// aliases
 const ALIASES = {
-  exit: 'gui',
   ll: 'ls',
   dir: 'ls',
   fetch: 'neofetch',

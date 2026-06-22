@@ -12,12 +12,10 @@ function commonPrefix(arr) {
   return prefix;
 }
 
-// Tab completion against command names and filesystem paths.
 export function useTabComplete() {
   return useCallback((input, cwd) => {
     const hasSpace = input.includes(' ');
 
-    // ---- complete a command name -----------------------------------------
     if (!hasSpace) {
       const matches = commandNames().filter((c) => c.startsWith(input)).sort();
       if (matches.length === 0) return { value: input, matches: [] };
@@ -26,12 +24,10 @@ export function useTabComplete() {
       return { value: cp.length > input.length ? cp : input, matches };
     }
 
-    // ---- complete a path argument ----------------------------------------
     const lastSpace = input.lastIndexOf(' ');
     const head = input.slice(0, lastSpace + 1);
     const frag = input.slice(lastSpace + 1);
 
-    // split fragment into dir part + partial name
     const slash = frag.lastIndexOf('/');
     const dirPart = slash >= 0 ? frag.slice(0, slash + 1) : '';
     const partial = slash >= 0 ? frag.slice(slash + 1) : frag;

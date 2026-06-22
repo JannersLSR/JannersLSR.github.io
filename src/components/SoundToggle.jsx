@@ -1,4 +1,3 @@
-// Fixed top-right audio toggle. Muted by default.
 export default function SoundToggle({ enabled, onToggle }) {
   return (
     <button

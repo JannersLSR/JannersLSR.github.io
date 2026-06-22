@@ -2,20 +2,17 @@ import { useCallback, useRef, useState } from 'react';
 
 const MAX = 50;
 
-// Bash-style command history with Up/Down recall.
-// listRef is the source of truth (read synchronously by up/down);
-// `history` state exists only so the `history` command can render it.
 export function useCommandHistory() {
   const [history, setHistory] = useState([]);
   const listRef = useRef([]);
-  const cursor = useRef(-1); // -1 = editing a fresh line
+  const cursor = useRef(-1);
 
   const push = useCallback((cmd) => {
     const c = cmd.trim();
     cursor.current = -1;
     if (!c) return;
     const prev = listRef.current;
-    if (prev[prev.length - 1] === c) return; // no dup consecutive
+    if (prev[prev.length - 1] === c) return;
     const next = [...prev, c].slice(-MAX);
     listRef.current = next;
     setHistory(next);
@@ -37,7 +34,7 @@ export function useCommandHistory() {
       return list[cursor.current];
     }
     cursor.current = -1;
-    return ''; // back to empty fresh line
+    return '';
   }, []);
 
   const resetCursor = useCallback(() => {

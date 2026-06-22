@@ -19,7 +19,7 @@ export default function App() {
         )}
         <Terminal
           active={booted}
-          onRequestGui={() => setGui(true)}
+          onRequestGui={() => setGui((g) => !g)}
           onKeyFeedback={sound.keypress}
         />
         <CRTOverlay />
